@@ -16,3 +16,21 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', function(){
+    return "Hola Mundo";
+});
+
+Route::get('/cadena', function(){
+    return [
+        'curso' => ['curso laravel', 'curso de programación', 'programación orientada a objetos']
+    ];
+});
+
+Route::get('/home/{nombre}', function($nombre){
+    return $nombre;
+});
+
+Route::get('/home/{nombre}/{apellido}', function($nombre, $apellido){
+    return $nombre . $apellido;
+});
